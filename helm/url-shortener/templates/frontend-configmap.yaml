@@ -1,0 +1,13 @@
+{{- if .Values.frontend.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "url-shortener.fullname" . }}-frontend-files
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "url-shortener.labels" . | nindent 4 }}
+    component: frontend
+data:
+  index.html: |
+{{ .Files.Get "frontend/index.html" | indent 4 }}
+{{- end }}

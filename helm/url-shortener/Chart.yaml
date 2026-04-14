@@ -1,0 +1,14 @@
+apiVersion: v2
+name: url-shortener
+description: A Helm chart for URL Shortener with Analytics - perfect for Docker/Kubernetes demonstrations
+type: application
+version: 1.0.0
+appVersion: "1.0"
+keywords:
+  - url-shortener
+  - analytics
+  - fastapi
+  - kubernetes
+maintainers:
+  - name: Your Name
+    email: your.email@example.com

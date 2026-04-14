@@ -1,0 +1,37 @@
+# Production values for url-shortener
+
+backend:
+  replicaCount: 5
+  image:
+    repository: url-shortener
+    tag: v1.0.0
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "250m"
+    limits:
+      memory: "256Mi"
+      cpu: "1000m"
+
+frontend:
+  replicaCount: 3
+  image:
+    repository: nginx
+    tag: alpine
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "100m"
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+  autoscaling:
+    enabled: true
+    minReplicas: 3
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 75
+
+config:
+  databaseUrl: "postgresql://user:password@postgres-service:5432/urlshortener"
