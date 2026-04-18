@@ -3,7 +3,7 @@
 backend:
   replicaCount: 1
   image:
-    repository: url-shortener
+    repository: mosesitc/url-shortener
     tag: latest
     pullPolicy: Always
   resources:

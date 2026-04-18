@@ -4,9 +4,9 @@
 backend:
   replicaCount: 2
   image:
-    repository: url-shortener
+    repository: mosesitc/url-shortener
     tag: latest
-    pullPolicy: Never
+    pullPolicy: IfNotPresent
   resources:
     requests:
       memory: "64Mi"

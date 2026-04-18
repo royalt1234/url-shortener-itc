@@ -7,7 +7,7 @@ backend:
   enabled: true
   replicaCount: 3
   image:
-    repository: url-shortener
+    repository: mosesitc/url-shortener
     tag: latest
     pullPolicy: Never
   
@@ -49,9 +49,10 @@ frontend:
     pullPolicy: IfNotPresent
   
   service:
-    type: LoadBalancer
+    type: NodePort
     port: 80
     targetPort: 80
+    nodePort: 30080
   
   resources:
     requests:
