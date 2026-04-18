@@ -47,3 +47,8 @@ venv.bak/
 # OS
 .DS_Store
 Thumbs.db
+
+#files
+/presentation_notes.md
+/README.txt
+/HELM_DEPLOYMENT.md
