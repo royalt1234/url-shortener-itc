@@ -17,6 +17,16 @@ spec:
         app: url-shortener
         component: frontend
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: role
+                operator: In
+                values:
+                - frontend
       containers:
       - name: frontend
         image: nginx:alpine
